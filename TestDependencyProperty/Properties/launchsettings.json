@@ -1,0 +1,10 @@
+﻿{
+    "profiles": {
+      "TestDependencyProperty (Package)": {
+        "commandName": "MsixPackage"
+      },
+      "TestDependencyProperty (Unpackaged)": {
+        "commandName": "Project"
+      }
+    }
+}
