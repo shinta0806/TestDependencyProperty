@@ -12,7 +12,7 @@ internal sealed partial class MainPage : Page
 		InitializeComponent();
 	}
 
-	public MainViewModel ViewModel
+	public MainPageViewModel ViewModel
 	{
 		get;
 	}

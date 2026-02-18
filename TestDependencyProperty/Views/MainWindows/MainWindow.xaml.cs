@@ -1,3 +1,5 @@
+using TestDependencyProperty.ViewModels.MainWindows;
+
 namespace TestDependencyProperty.Views.MainWindows;
 
 internal sealed partial class MainWindow : WindowEx
@@ -8,6 +10,7 @@ internal sealed partial class MainWindow : WindowEx
 
 		AppWindow.SetIcon(Path.Combine(AppContext.BaseDirectory, "Assets/WindowIcon.ico"));
 		Content = new MainPage();
-		Title = "AppDisplayName";
 	}
+
+	public MainPageViewModel ViewModel => ((MainPage)Content).ViewModel;
 }
