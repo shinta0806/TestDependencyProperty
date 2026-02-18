@@ -52,7 +52,17 @@ internal partial class MainPageViewModel : ObservableRecipient
 	{
 		get;
 		set;
-	} = "テスト";
+	} = "テキスト";
+
+	/// <summary>
+	/// 依存関係プロパティーである TextBox2.KeyDownInfo にバインド
+	/// </summary>
+	[ObservableProperty]
+	public partial String? MyKeyDownInfo
+	{
+		get;
+		set;
+	} = "キー入力情報";
 
 	// --------------------------------------------------------------------
 	// コマンド
