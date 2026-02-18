@@ -6,7 +6,7 @@ namespace TestDependencyProperty;
 
 public partial class App : Application
 {
-	public static WindowEx MainWindow { get; } = new MainWindow();
+	public static Window MainWindow { get; } = new MainWindow();
 
 	public App()
 	{

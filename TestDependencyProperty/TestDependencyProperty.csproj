@@ -30,12 +30,10 @@
 		<PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.3" />
 		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.260209005" />
 		<PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" Version="3.0.1" />
-		<PackageReference Include="WinUIEx" Version="2.9.0" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<Using Include="System.Diagnostics" />
-		<Using Include="WinUIEx" />
 	</ItemGroup>
 
 	<PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">

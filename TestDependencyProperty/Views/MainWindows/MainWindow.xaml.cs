@@ -1,8 +1,10 @@
+using Microsoft.UI.Xaml;
+
 using TestDependencyProperty.ViewModels.MainWindows;
 
 namespace TestDependencyProperty.Views.MainWindows;
 
-internal sealed partial class MainWindow : WindowEx
+internal sealed partial class MainWindow : Window
 {
 	public MainWindow()
 	{
