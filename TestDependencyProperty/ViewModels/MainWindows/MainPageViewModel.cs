@@ -9,6 +9,7 @@
 // ----------------------------------------------------------------------------
 
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace TestDependencyProperty.ViewModels.MainWindows;
 
@@ -42,4 +43,23 @@ internal partial class MainPageViewModel : ObservableRecipient
 		get;
 		set;
 	} = "依存関係プロパティーのテスト";
+
+	// --------------------------------------------------------------------
+	// コマンド
+	// --------------------------------------------------------------------
+
+	#region ウィンドウタイトル設定ボタンの制御
+	[RelayCommand]
+	private async Task ButtonSetWindowTitleClicked()
+	{
+		try
+		{
+			MyTitle = $"ウィンドウタイトル変更 {Environment.TickCount}";
+		}
+		catch (Exception ex)
+		{
+			Debug.WriteLine(ex);
+		}
+	}
+	#endregion
 }

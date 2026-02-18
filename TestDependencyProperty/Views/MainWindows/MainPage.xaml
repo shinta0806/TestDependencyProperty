@@ -9,6 +9,9 @@
 
 	<StackPanel >
 
+		<!-- ウィンドウタイトル設定 -->
+		<Button Content="ウィンドウタイトル変更" Command="{x:Bind ViewModel.ButtonSetWindowTitleClickedCommand}" />
+
 	</StackPanel>
 
 </Page>
