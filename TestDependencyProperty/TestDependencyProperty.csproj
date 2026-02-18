@@ -33,7 +33,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TestDependencyProperty.Core\TestDependencyProperty.Core.csproj" />
+    <Using Include="System.Diagnostics" />
+    <Using Include="WinUIEx" />
   </ItemGroup>
   
   <PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
