@@ -44,17 +44,42 @@ internal partial class MainPageViewModel : ObservableRecipient
 		set;
 	} = "依存関係プロパティーのテスト";
 
+	/// <summary>
+	/// 依存関係プロパティーではない普通のプロパティーである TextBox2.NormalText にバインド
+	/// </summary>
+	[ObservableProperty]
+	public partial String? MyText
+	{
+		get;
+		set;
+	} = "テスト";
+
 	// --------------------------------------------------------------------
 	// コマンド
 	// --------------------------------------------------------------------
 
-	#region ウィンドウタイトル設定ボタンの制御
+	#region ウィンドウタイトル変更ボタンの制御
 	[RelayCommand]
-	private async Task ButtonSetWindowTitleClicked()
+	private void ButtonSetWindowTitleClicked()
 	{
 		try
 		{
 			MyTitle = $"ウィンドウタイトル変更 {Environment.TickCount}";
+		}
+		catch (Exception ex)
+		{
+			Debug.WriteLine(ex);
+		}
+	}
+	#endregion
+
+	#region テキスト変更ボタンの制御
+	[RelayCommand]
+	private void ButtonSetNormalTextClicked()
+	{
+		try
+		{
+			MyText = $"テキスト変更 {Environment.TickCount}";
 		}
 		catch (Exception ex)
 		{
