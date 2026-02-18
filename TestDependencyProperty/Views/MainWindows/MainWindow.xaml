@@ -1,5 +1,5 @@
-﻿<windowex:WindowEx
-    x:Class="TestDependencyProperty.MainWindow"
+<windowex:WindowEx
+    x:Class="TestDependencyProperty.Views.MainWindows.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:TestDependencyProperty"
@@ -9,8 +9,8 @@
     MinWidth="500"
     MinHeight="500"
     PersistenceId="MainWindow"
-    mc:Ignorable="d">
-    <Window.SystemBackdrop>
-        <MicaBackdrop/>
-    </Window.SystemBackdrop>
+    mc:Ignorable="d" >
+	<Window.SystemBackdrop>
+		<MicaBackdrop/>
+	</Window.SystemBackdrop>
 </windowex:WindowEx>

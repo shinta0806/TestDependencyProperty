@@ -1,8 +1,6 @@
-using TestDependencyProperty.Views;
+namespace TestDependencyProperty.Views.MainWindows;
 
-namespace TestDependencyProperty;
-
-public sealed partial class MainWindow : WindowEx
+internal sealed partial class MainWindow : WindowEx
 {
 	public MainWindow()
 	{

@@ -1,5 +1,7 @@
 using Microsoft.UI.Xaml;
 
+using TestDependencyProperty.Views.MainWindows;
+
 namespace TestDependencyProperty;
 
 public partial class App : Application
