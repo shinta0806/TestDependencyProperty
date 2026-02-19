@@ -64,6 +64,16 @@ internal partial class MainPageViewModel : ObservableRecipient
 		set;
 	} = "キー入力情報";
 
+	/// <summary>
+	/// 依存関係プロパティーの中継
+	/// </summary>
+	[ObservableProperty]
+	public partial String? MyRelayText
+	{
+		get;
+		set;
+	} = "依存関係プロパティーの中継";
+
 	// --------------------------------------------------------------------
 	// コマンド
 	// --------------------------------------------------------------------
@@ -90,6 +100,21 @@ internal partial class MainPageViewModel : ObservableRecipient
 		try
 		{
 			MyText = $"テキスト変更 {Environment.TickCount}";
+		}
+		catch (Exception ex)
+		{
+			Debug.WriteLine(ex);
+		}
+	}
+	#endregion
+
+	#region 依存関係プロパティーの中継
+	[RelayCommand]
+	private void ButtonRelayClicked()
+	{
+		try
+		{
+			MyRelayText = $"中継テキスト変更 {Environment.TickCount}";
 		}
 		catch (Exception ex)
 		{

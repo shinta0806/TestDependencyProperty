@@ -4,9 +4,14 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:mvc="using:TestDependencyProperty.Models.ValueConverters"
 	xmlns:vcc="using:TestDependencyProperty.Views.CustomControls"
     Background="{ThemeResource SolidBackgroundFillColorBaseBrush}"
     mc:Ignorable="d" >
+
+	<Page.Resources>
+		<mvc:ObjectToBindingConverter x:Key="ObjectToBindingConverter" />
+	</Page.Resources>
 
 	<StackPanel Margin="20" >
 
@@ -17,14 +22,25 @@
 		<StackPanel Orientation="Horizontal" Margin="0,20,0,0" >
 			<Button Content="バインド経由で TextBox2.NormalText 変更（普通のプロパティー）" Command="{x:Bind ViewModel.ButtonSetNormalTextClickedCommand}" />
 
-			<!-- 自作コントロールにバインド（NormalText：普通のプロパティー、KeyDownInfo：依存関係プロパティー） -->
+			<!-- 自作コントロールにバインド -->
+			<!-- NormalText：普通のプロパティー -->
+			<!-- KeyDownInfo：依存関係プロパティー、TwoWay なので、TextBox2 によって KeyDownInfo が変更されたら、MyKeyDownInfo に反映される -->
 			<vcc:TextBox2 NormalText="{x:Bind ViewModel.MyText, Mode=OneWay}" 
 						  KeyDownInfo="{x:Bind ViewModel.MyKeyDownInfo, Mode=TwoWay}" Width="200" />
 		</StackPanel>
 
 		<StackPanel Orientation="Horizontal" >
 			<TextBlock Text="TextBox2 でキーを押すと、バインド経由で右の欄に表示（依存関係プロパティー）：" />
+
+			<!-- TextBox2 によって変更された KeyDownInfo を表示 -->
 			<TextBlock Text="{x:Bind ViewModel.MyKeyDownInfo, Mode=OneWay}" Margin="10,0,0,0" />
+		</StackPanel>
+		
+		<!-- 依存関係プロパティーの中継 -->
+		<StackPanel Orientation="Horizontal" Margin="0,20,0,0" >
+			<Button Content="依存関係プロパティーの中継" Command="{x:Bind ViewModel.ButtonRelayClickedCommand}" />
+			<TextBlock Text="{x:Bind ViewModel.MyRelayText, Mode=OneWay}" VerticalAlignment="Center" Width="200" Margin="20,0,0,0" />
+			<vcc:StackPanel2 TextBinding="{x:Bind ViewModel.MyRelayText, Converter={StaticResource ObjectToBindingConverter}, ConverterParameter=MyRelayText}" />
 		</StackPanel>
 
 	</StackPanel>

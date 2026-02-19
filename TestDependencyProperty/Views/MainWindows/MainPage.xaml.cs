@@ -10,6 +10,9 @@ internal sealed partial class MainPage : Page
 	{
 		ViewModel = new();
 		InitializeComponent();
+
+		// 中継用の Binding 用
+		DataContext = ViewModel;
 	}
 
 	public MainPageViewModel ViewModel

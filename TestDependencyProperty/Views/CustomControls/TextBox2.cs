@@ -24,6 +24,7 @@ internal partial class TextBox2 : TextBox
 		}
 	}
 
+	#region KeyDownInfo 依存関係プロパティー
 	/// <summary>
 	/// 依存関係プロパティーの登録
 	/// </summary>
@@ -52,6 +53,7 @@ internal partial class TextBox2 : TextBox
 			Debug.WriteLine($"KeyDownInfo changed: {textBox2}, {args.NewValue}");
 		}
 	}
+	#endregion
 
 	private void KeyDownEventHandler(Object sender, KeyRoutedEventArgs args)
 	{
