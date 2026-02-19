@@ -4,14 +4,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	xmlns:mvc="using:TestDependencyProperty.Models.ValueConverters"
 	xmlns:vcc="using:TestDependencyProperty.Views.CustomControls"
     Background="{ThemeResource SolidBackgroundFillColorBaseBrush}"
     mc:Ignorable="d" >
-
-	<Page.Resources>
-		<mvc:ObjectToBindingConverter x:Key="ObjectToBindingConverter" />
-	</Page.Resources>
 
 	<StackPanel Margin="20" >
 
@@ -40,7 +35,7 @@
 		<StackPanel Orientation="Horizontal" Margin="0,20,0,0" >
 			<Button Content="依存関係プロパティーの中継" Command="{x:Bind ViewModel.ButtonRelayClickedCommand}" />
 			<TextBlock Text="{x:Bind ViewModel.MyRelayText, Mode=OneWay}" VerticalAlignment="Center" Width="200" Margin="20,0,0,0" />
-			<vcc:StackPanel2 TextBinding="{x:Bind ViewModel.MyRelayText, Converter={StaticResource ObjectToBindingConverter}, ConverterParameter=MyRelayText}" />
+			<vcc:StackPanel2 TextBinding="{Binding MyRelayText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 		</StackPanel>
 
 	</StackPanel>
