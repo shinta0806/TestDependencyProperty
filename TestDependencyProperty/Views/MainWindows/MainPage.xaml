@@ -11,10 +11,12 @@
 	<StackPanel Margin="20" >
 
 		<!-- ウィンドウタイトル設定 -->
+		<TextBlock Text="普通のプロパティーでバインド" />
 		<Button Content="バインド経由で Window.Title 変更（普通のプロパティー）" Command="{x:Bind ViewModel.ButtonSetWindowTitleClickedCommand}" />
 
 		<!-- テキスト設定 -->
-		<StackPanel Orientation="Horizontal" Margin="0,20,0,0" >
+		<TextBlock Text="カスタムコントロールののバインド（普通のプロパティーを変更 → * を付加したものを依存関係プロパティーに反映）" Margin="0,20,0,0" />
+		<StackPanel Orientation="Horizontal" >
 			<Button Content="バインド経由で TextBox2.NormalText 変更（普通のプロパティー）" Command="{x:Bind ViewModel.ButtonSetNormalTextClickedCommand}" />
 
 			<!-- 自作コントロールにバインド -->
@@ -24,6 +26,7 @@
 						  KeyDownInfo="{x:Bind ViewModel.MyKeyDownInfo, Mode=TwoWay}" Width="200" />
 		</StackPanel>
 
+		<TextBlock Text="依存関係プロパティーで双方向バインドの結果が反映されるのを確認" Margin="0,20,0,0" />
 		<StackPanel Orientation="Horizontal" >
 			<TextBlock Text="TextBox2 でキーを押すと、バインド経由で右の欄に表示（依存関係プロパティー）：" />
 
@@ -32,7 +35,8 @@
 		</StackPanel>
 		
 		<!-- 依存関係プロパティーの中継 -->
-		<StackPanel Orientation="Horizontal" Margin="0,20,0,0" >
+		<TextBlock Text="TextBox に直接バインドせず、中継プロパティーを介してのバインド" Margin="0,20,0,0" />
+		<StackPanel Orientation="Horizontal" >
 			<Button Content="依存関係プロパティーの中継" Command="{x:Bind ViewModel.ButtonRelayClickedCommand}" />
 			<TextBlock Text="{x:Bind ViewModel.MyRelayText, Mode=OneWay}" VerticalAlignment="Center" Width="200" Margin="20,0,0,0" />
 			<vcc:StackPanel2 TextBinding="{Binding MyRelayText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
