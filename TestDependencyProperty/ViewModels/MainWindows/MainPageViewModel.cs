@@ -13,6 +13,8 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace TestDependencyProperty.ViewModels.MainWindows;
 
+// AOT の場合は {Binding} 用に [GeneratedBindableCustomProperty] を付与する
+// [GeneratedBindableCustomProperty([nameof(MyRelayText)], [typeof(String)])]
 internal partial class MainPageViewModel : ObservableRecipient
 {
 	// ====================================================================

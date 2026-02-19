@@ -13,7 +13,7 @@
   <Identity
     Name="61af2efa-09dd-4f4d-b990-b7ef2e327d75"
     Publisher="CN=shinta"
-    Version="1.0.0.0" />
+    Version="1.0.7.0" />
     
   <mp:PhoneIdentity PhoneProductId="61af2efa-09dd-4f4d-b990-b7ef2e327d75" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
     

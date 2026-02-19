@@ -7,12 +7,11 @@ internal partial class StackPanel2 : StackPanel
 {
 	public StackPanel2()
 	{
-		_textBox = new();
 		_textBox.Width = 200;
 		Children.Add(_textBox);
 	}
 
-	private readonly TextBox _textBox;
+	private readonly TextBox _textBox = new();
 
 	/// <summary>
 	/// 中継用の Binding
@@ -26,6 +25,7 @@ internal partial class StackPanel2 : StackPanel
 			if (field != null)
 			{
 				// TextBox.Text にバインド
+				// AOT の場合、[GeneratedBindableCustomProperty] を忘れていると例外が発生するので注意
 				_textBox.SetBinding(TextBox.TextProperty, field);
 			}
 		}
